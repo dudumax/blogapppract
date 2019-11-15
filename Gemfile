@@ -37,9 +37,11 @@ gem 'jbuilder', '~> 2.5'
 gem 'bootsnap', '>= 1.1.0', require: false
 gem 'devise'
 gem 'rails_admin', '~> 2.0'
-gem 'cancancan'
+
 gem 'rails-i18n', '~> 5.1'
 gem 'kaminari'
+gem 'omniauth'
+gem 'omniauth-twitter'
 
 
 group :development, :test do
@@ -49,7 +51,7 @@ group :development, :test do
   gem 'spring-commands-rspec'
   gem "factory_bot_rails"
   gem 'faker'
- 
+  gem "pundit"
   gem "database_cleaner"
   gem "launchy"
  
