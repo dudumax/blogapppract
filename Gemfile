@@ -54,6 +54,7 @@ group :development, :test do
   gem "pundit"
   gem "database_cleaner"
   gem "launchy"
+  gem 'dotenv-rails'
  
 end
 
