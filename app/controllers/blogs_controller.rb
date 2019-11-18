@@ -1,14 +1,17 @@
 class BlogsController < ApplicationController
+  
   skip_before_action :verify_authenticity_token, raise: false
   protect_from_forgery prepend: true, with: :exception
   before_action :set_blog, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!, except: [:index, :show]
   
+  
+  
 
   # GET /blogs
   # GET /blogs.json
   def index
-    @blogs = Blog.order(:title).page(params[:page]).per(2)
+    @blogs = Blog.order(:title).page(params[:page]).per(10)
     
   end
 

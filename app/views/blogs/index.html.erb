@@ -27,8 +27,8 @@
       <tr>
         <td><%= blog.title %></td>
         <td><%= blog.comment %></td>
-         <td><%= blog.user.email %></td>
-         <td><%= link_to 'Show', blog %></td>
+        <td><%= blog.user.email %></td>
+        <td><%= link_to 'Show', blog %></td>
         <% if blog.user== current_user %>
         
         <td><%= link_to 'Edit', edit_blog_path(blog) %></td>

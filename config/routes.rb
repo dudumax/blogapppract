@@ -1,9 +1,11 @@
 Rails.application.routes.draw do
+  
+  mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
+  
   resources :contacts
   get 'contacts/new'
   scope "(:locale)", locale: /#{I18n.available_locales.join("|")}/, defaults: {locale: "en"} do
   
-  mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   devise_for :users
   root 'blogs#index'
   

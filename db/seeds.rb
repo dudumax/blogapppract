@@ -1,3 +1,5 @@
+require 'faker'
+include Faker
 # This file should contain all the record creation needed to seed the database with its default values.
 # The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
 #
@@ -8,8 +10,19 @@
 100.times do |n|
   email = Faker::Internet.email
   password = "password"
+
   User.create!(email: email,
                password: password,
                password_confirmation: password,
                )
+
+  title = Faker::Name.name
+  comment= Faker::Lorem.paragraph(sentence_count: 2)
+  
+  
+ Blog.create!(title: title,
+               comment: comment,
+               user: User.find_by(admin: 'false'),
+               )
 end
+
