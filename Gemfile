@@ -42,8 +42,7 @@ gem 'kaminari'
 gem 'omniauth'
 gem 'omniauth-twitter'
 gem 'dotenv-rails', :require => 'dotenv/rails-now'
-
-
+gem 'ransack'
 
 
 group :development, :test do
@@ -56,7 +55,7 @@ group :development, :test do
   gem 'cancancan'
   gem "database_cleaner"
   gem "launchy"
- 
+  
   
  
 end

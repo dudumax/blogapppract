@@ -11,8 +11,11 @@ class BlogsController < ApplicationController
   # GET /blogs
   # GET /blogs.json
   def index
-    @blogs = Blog.order(:title).page(params[:page]).per(10)
-    
+     @q = Blog.ransack(params[:q])
+     @blogs = @q.result(distinct: true)
+     
+     
+     @blogs = @blogs.order(:title).page(params[:page]).per(10)
   end
 
   # GET /blogs/1
